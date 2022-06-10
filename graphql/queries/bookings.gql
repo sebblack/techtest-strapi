@@ -1,0 +1,16 @@
+  query bookings {
+    bookings(email: "test@strapi.io", page: 1) {
+      pagination {
+        total
+        page
+        pageSize
+      }
+      nodes {
+        id
+        seatCount
+        flight {
+          code
+        }
+      }
+    }
+  }

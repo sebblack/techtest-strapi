@@ -1,0 +1,4 @@
+type Mutation {
+  scheduleFlight(flightInfo: ScheduleFlightInput!): Flight
+  bookFlight(bookingInfo: BookFlightInput!): Booking
+}

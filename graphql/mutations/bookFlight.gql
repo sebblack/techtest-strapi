@@ -1,0 +1,13 @@
+  mutation book {
+    bookFlight(
+      bookingInfo: { seatCount: 10, flightId: 1, email: "test@strapi.io" }
+    ) {
+      id
+      flight {
+        code
+        availableSeats
+        seatCount
+      }
+      email
+    }
+  }

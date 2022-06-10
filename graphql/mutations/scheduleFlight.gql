@@ -1,0 +1,21 @@
+  mutation scheduleFlight($flight: ScheduleFlightInput!) {
+    scheduleFlight(flightInfo: $flight) {
+      id
+      code
+      launchSite {
+        name
+        planet {
+          name
+        }
+      }
+      landingSite {
+        name
+        planet {
+          name
+        }
+      }
+      availableSeats
+      seatCount
+      departureAt
+    }
+  }

@@ -1,0 +1,12 @@
+type Query {
+  planets: [Planet]
+
+  spaceCenters(page: Int, pageSize: Int): PaginatedSpaceCenters
+  spaceCenter(id: ID, uid: ID): SpaceCenter
+
+  flights(page: Int, pageSize: Int): PaginatedFlights
+  flight(id: ID): Flight
+
+  bookings(email: String!, page: Int, pageSize: Int): PaginatedBookings
+  booking(id: ID!): Booking
+}

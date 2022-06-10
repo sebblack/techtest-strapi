@@ -1,0 +1,14 @@
+type SpaceCenter {
+  id: ID!
+  uid: ID!
+  name: String
+  description: String
+  planet: Planet
+  latitude: Float
+  longitude: Float
+}
+
+type PaginatedSpaceCenters {
+  pagination: Pagination,
+  nodes: [SpaceCenter]
+}

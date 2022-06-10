@@ -1,0 +1,22 @@
+query spaceCenters {
+  spaceCenters {
+    pagination {
+      total
+      page
+      pageSize
+    }
+    nodes {
+      id
+      uid
+      name
+      description
+      latitude
+      longitude
+      planet {
+        id
+        name
+        code
+      }
+    }
+  }
+}

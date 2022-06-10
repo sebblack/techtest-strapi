@@ -1,0 +1,21 @@
+type Flight {
+  id: ID!
+  code: String
+  launchSite: SpaceCenter
+  landingSite: SpaceCenter
+  departureAt: Date
+  seatCount: Int
+  availableSeats: Int
+}
+
+type PaginatedFlights {
+  pagination: Pagination
+  nodes: [Flight]
+}
+
+input ScheduleFlightInput {
+  launchSiteId: ID!
+  landingSiteId: ID!
+  departureAt: Date!
+  seatCount: Int!
+}

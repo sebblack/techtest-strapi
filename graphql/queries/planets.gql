@@ -1,0 +1,10 @@
+query planets {
+  planets {
+    id
+    name
+    code
+    spaceCenters(limit: 3) {
+      id
+    }
+  }
+}

@@ -1,0 +1,13 @@
+query spaceCenter {
+  spaceCenter(uid: "e28f6ef2-62ab-4a22-a778-bef1b32900a6") {
+    id
+    uid
+    name
+    description
+    planet {
+      id
+      name
+      code
+    }
+  }
+}

@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:alpine
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER:  user123
+      POSTGRES_PASSWORD: verysecurepassword
+      POSTGRES_DB: strapi-tech-test
+
+  knex:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      DB_CLIENT: pg
+      DB_HOST: postgres
+      DB_USERNAME: user123
+      DB_PASSWORD: verysecurepassword
+    entrypoint: ["npm", "run", "migrateAndSeed"]
+
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    environment:
+      DB_CLIENT: pg
+      DB_HOST: postgres
+      DB_USERNAME: user123
+      DB_PASSWORD: verysecurepassword

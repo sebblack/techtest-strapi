@@ -1,0 +1,17 @@
+type Booking {
+  id: ID!
+  flight: Flight
+  seatCount: Int
+  email: String
+}
+
+type PaginatedBookings {
+  pagination: Pagination
+  nodes: [Booking]
+}
+
+input BookFlightInput {
+  seatCount: Int!
+  flightId: Int!
+  email: String!
+}
